@@ -1,0 +1,35 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Checkout') {
+            steps {
+                echo 'GitHub repository connected successfully!'
+            }
+        }
+
+        stage('view files') {
+            steps {
+                sh 'ls'
+            }
+        }
+
+        stage('compail java') {
+            steps {
+                 sh 'javac helloworld.java'
+            }
+        }
+        stage('run java') {
+            steps {
+                 sh 'java helloworld'
+            }
+        }
+        stage('final step') {
+            steps {
+                 echo 'complite all task'
+            }
+        }
+
+
+    }
+}
